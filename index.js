@@ -3,6 +3,7 @@ import { NativeModules } from 'react-native';
 const { ARNKakaoLogin } = NativeModules;
 
 export const login = ARNKakaoLogin.login;
+export const isKakaoTalkLoginAvailable = ARNKakaoLogin.isKakaoTalkLoginAvailable;
 export const loginWithNewScopes = ARNKakaoLogin.loginWithNewScopes;
 export const logout = ARNKakaoLogin.logout;
 export const unlink = ARNKakaoLogin.unlink;
@@ -27,6 +28,7 @@ const KakaoLogin = {
   getAccessToken: async () => case_convert(await getAccessToken()),
   getProfile: async () => case_convert(await getProfile()),
   login: async () => case_convert(await login()),
+  isKakaoTalkLoginAvailable: async () => case_convert(await isKakaoTalkLoginAvailable()),
   loginWithNewScopes: async (perms) => case_convert(await loginWithNewScopes(perms)),
   logout,
   unlink,
