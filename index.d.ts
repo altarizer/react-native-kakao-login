@@ -65,10 +65,14 @@ declare module '@actbase/react-native-kakao-login' {
     refresh_token_expiresAt: string;
     scopes: string[];
   }
+  export interface Boolean {
+    result: boolean;
+  }
 
   export interface ARNKakaoLogin {
     getAccessToken: () => Promise<null | AccessTokenType>;
     login: () => Promise<null | AccessTokenType>;
+    isKakaoTalkLoginAvailable: () => Promise<Boolean>;
     loginWithNewScopes: (scopes: string[]) => Promise<null | AccessTokenType>;
     getProfile: () => Promise<ProfileType>;
     logout: () => Promise<'SUCCESS'>;
