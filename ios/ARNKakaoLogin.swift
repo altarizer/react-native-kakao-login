@@ -39,6 +39,17 @@ public class ARNKakaoLogin: NSObject {
         return dict;
     }
     
+
+    @objc(isKakaoTalkLoginAvailable:rejecter:)
+    func isKakaoTalkLoginAvailable(_ resolve: @escaping RCTPromiseResolveBlock,
+               rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+
+        resolve([
+            "result": AuthApi.isKakaoTalkLoginAvailable()
+        ])
+
+    }
+
     @objc(login:rejecter:)
     func login(_ resolve: @escaping RCTPromiseResolveBlock,
                rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
