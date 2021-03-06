@@ -146,14 +146,7 @@ public class ARNKakaoLogin extends ReactContextBaseJavaModule implements Activit
         return null;
       });
     } else {
-      //loginWithKakaoAccount(promise);
-      WritableMap map = Arguments.createMap();
-      map.putString("accessToken", "");
-      map.putString("refreshToken",  "");
-      map.putString("accessTokenExpiresAt",  "");
-      map.putString("refreshTokenExpiresAt",  "");
-      
-      promise.resolve(map);
+      loginWithKakaoAccount(promise);
     }
   }
 
