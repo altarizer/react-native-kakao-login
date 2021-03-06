@@ -108,8 +108,10 @@ public class ARNKakaoLogin extends ReactContextBaseJavaModule implements Activit
   
     
   @ReactMethod
-  public boolean isKakaoTalkLoginAvailable(final Promise promise) {
-    return LoginClient.getInstance().isKakaoTalkLoginAvailable(context));
+  public void isKakaoTalkLoginAvailable(final Promise promise) {
+      WritableMap map = Arguments.createMap();
+      map.putBoolean("result", LoginClient.getInstance().isKakaoTalkLoginAvailable(context));
+      promise.resolve(map);
   }
 
   @ReactMethod
@@ -144,7 +146,14 @@ public class ARNKakaoLogin extends ReactContextBaseJavaModule implements Activit
         return null;
       });
     } else {
-      loginWithKakaoAccount(promise);
+      //loginWithKakaoAccount(promise);
+      WritableMap map = Arguments.createMap();
+      map.putString("accessToken", "");
+      map.putString("refreshToken",  "");
+      map.putString("accessTokenExpiresAt",  "");
+      map.putString("refreshTokenExpiresAt",  "");
+      
+      promise.resolve(map);
     }
   }
 
@@ -383,4 +392,3 @@ public class ARNKakaoLogin extends ReactContextBaseJavaModule implements Activit
   }
 
 }
-
