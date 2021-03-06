@@ -105,6 +105,12 @@ public class ARNKakaoLogin extends ReactContextBaseJavaModule implements Activit
       return null;
     });
   }
+  
+    
+  @ReactMethod
+  public void isKakaoTalkLoginAvailable(final Promise promise) {
+    return LoginClient.getInstance().isKakaoTalkLoginAvailable(context));
+  }
 
   @ReactMethod
   public void login(final Promise promise) {
