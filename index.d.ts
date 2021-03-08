@@ -1,4 +1,4 @@
-declare module '@actbase/react-native-kakao-login' {
+declare module '@altariz/rn-kakao-login' {
   export interface ProfileType {
     id: number;
     connected_at: string;
