@@ -1,23 +1,28 @@
+
+사용 편의를 위해서 trabricks-react/react-native-kakao-login 에서 Fork한 프로젝트 
+
 하이브리드 앱인 경우 웹 브라우저가 갈려서 카카오 아이디로 로그인 지원안되는 부분 해결하기 위해 
 카카오톡이 설치 되어 있는지 확인 메서드를 위한 인터페이스 추가  
 
-**메서드추가 **
-
+[메서드추가]
 
 ```javacript
-        KakaoLogin.isKakaoTalkLoginAvailable().then((res) => {
-        
-          console.log("KakaoLogin.isKakaoTalkLoginAvailable():"+ JSON.stringify(res))
-          if(res.result) {
-          }
-       }
-
+    KakaoLogin.isKakaoTalkLoginAvailable().then((res) => {
+    
+      console.log("KakaoLogin.isKakaoTalkLoginAvailable():"+ JSON.stringify(res))
+      if(res.result) {
+      }
+    }
 ```
 
 **응답**
 ``` json
 {result: true|false}
 ```
+
+
+제작자분에게 감사한 마음을 가집시다!
+감사합니다!
 
 ---
 

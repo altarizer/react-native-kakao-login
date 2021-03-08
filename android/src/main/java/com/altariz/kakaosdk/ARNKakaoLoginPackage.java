@@ -1,4 +1,4 @@
-package io.actbase.kakaosdk;
+package com.altariz.kakaosdk;
 
 import java.util.Arrays;
 import java.util.Collections;
