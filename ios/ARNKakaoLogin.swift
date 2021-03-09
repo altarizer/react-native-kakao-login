@@ -59,7 +59,7 @@ public class ARNKakaoLogin: NSObject {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
             
             if (UserApi.isKakaoTalkLoginAvailable()) {
-                AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                     do {
                         if let error = error {
                             throw error;
@@ -77,7 +77,7 @@ public class ARNKakaoLogin: NSObject {
                 }
             }
             else {
-                AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                     do {
                         if let error = error {
                             throw error;
@@ -107,7 +107,7 @@ public class ARNKakaoLogin: NSObject {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
             
             var scopes = scopedata as? [String]
-            AuthApi.shared.loginWithKakaoAccount(scopes: scopes!) { (oauthToken, error) in
+            UserApi.shared.loginWithKakaoAccount(scopes: scopes!) { (oauthToken, error) in
                 if let error = error {
                     reject("ARNKakaoLogin", error.asAFError?.errorDescription, nil)
                     return
