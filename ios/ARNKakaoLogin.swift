@@ -45,7 +45,7 @@ public class ARNKakaoLogin: NSObject {
                rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
 
         resolve([
-            "result": AuthApi.isKakaoTalkLoginAvailable()
+            "result": UserApi.isKakaoTalkLoginAvailable()
         ])
 
     }
@@ -58,7 +58,7 @@ public class ARNKakaoLogin: NSObject {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss";
             
-            if (AuthApi.isKakaoTalkLoginAvailable()) {
+            if (UserApi.isKakaoTalkLoginAvailable()) {
                 AuthApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                     do {
                         if let error = error {
