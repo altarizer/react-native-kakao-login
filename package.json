@@ -1,7 +1,7 @@
 {
   "name": "@altariz/rn-kakao-login",
-  "version": "1.1.1",
-  "description": "Kakao Login v2 For React-Native",
+  "version": "1.1.2",
+  "description": "Kakao Login v2 for RN",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -9,6 +9,9 @@
   },
   "keywords": [
     "react-native",
+    "react native",
+    "RN",
+    "kakaotalk",
     "kakao login",
     "카카오 로그인"
   ],
@@ -19,7 +22,7 @@
     "react-native": "*"
   },
   "author": {
-    "name": "Kaim Lee",
+    "name": "Kaim",
     "email": "hslee2000@gmail.com"
   },
   "homepage": "https://github.com/altarizer/rn-kakao-login#readme",

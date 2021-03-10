@@ -1,71 +1,50 @@
 
-사용 편의를 위해서 trabricks-react/react-native-kakao-login 에서 Fork한 프로젝트 
+[react-native-kakao-login](https://github.com/trabricks-react/react-native-kakao-login) 에서 Fork 후 변경된 프로젝트. 
 
-하이브리드 앱인 경우 웹 브라우저가 갈려서 카카오 아이디로 로그인 지원안되는 부분 해결하기 위해 
-카카오톡이 설치 되어 있는지 확인 메서드를 위한 인터페이스 추가  
+`이전 프로젝트 제작자분에게 감사한 마음을 가집시다!`   <br>
+`감사합니다!`   
 
-[메서드추가]
+
+
+하이브리드 앱으로 개발한 경우 내부 웹브라우저가 멀티로 작동하지 않아 카카오 아이디로 로그인 지원않는다.    <br>
+어찌 방법을 찾아보면 되겠지만, 각자도생하고자 해도 카카오톡 앱이 설치되어있는지 확인하는게 우선인데    <br>
+해당 메서드가 인터페이스에 노출되지 않아 해당 인터페이스 추가  
+(카카오SDK 변경에 따라 AuthAPI -> UserAPI 로 변경 코드도 적용)
+
+[추가된 메서드]
 
 ```javacript
+
     KakaoLogin.isKakaoTalkLoginAvailable().then((res) => {
     
       console.log("KakaoLogin.isKakaoTalkLoginAvailable():"+ JSON.stringify(res))
       if(res.result) {
       }
     }
+
 ```
 
 **응답**
+
 ``` json
+
 {result: true|false}
+
 ```
-
-
-전 제작자분에게 감사한 마음을 가집시다!
-감사합니다!
-
----
-
-
-# 카카오로그인 for React Native
-
-![platforms](https://img.shields.io/badge/platforms-Android%20%7C%20iOS-brightgreen.svg?style=flat-square&colorB=191A17)
-[![npm](https://img.shields.io/npm/v/@actbase/react-native-kakao-login.svg?style=flat-square)](https://www.npmjs.com/package/@actbase/react-native-kakao-login)
-[![npm](https://img.shields.io/npm/dm/@actbase/react-native-kakao-login.svg?style=flat-square&colorB=007ec6)](https://www.npmjs.com/package/@actbase/react-native-kakao-login)
-
-
-[![github issues](https://img.shields.io/github/issues/trabricks/react-native-kakao-login.svg?style=flat-square)](https://github.com/trabricks/react-native-kakao-login/issues)
-[![github closed issues](https://img.shields.io/github/issues-closed/trabricks/react-native-kakao-login.svg?style=flat-square&colorB=44cc11)](https://github.com/trabricks/react-native-kakao-login/issues?q=is%3Aissue+is%3Aclosed)
-[![Issue Stats](https://img.shields.io/issuestats/i/github/trabricks/react-native-kakao-login.svg?style=flat-square&colorB=44cc11)](http://github.com/trabricks/react-native-kakao-login/issues)
-
-## 기본설정
-
-현재 버전은 Kakao SDK v2반영 버전입니다.
-
-@actbase/react-native-KakaoSDK랑 상관없이 독립적으로 사용가능합니다.
-
-스위프트 기반 sdk라서.. 가이드는 좀 정리해서 다시 올리겠습니다.
-
-궁금한 사항이 있는경우 카카오톡 오픈채팅 React & React-Native에서 물어보면 많은 분들이 답변해주십니다.
-
-작업하시다가 외주 혹은 작업할 업체가 필요하면 [leader@trabricks.io](mailto:leader@trabricks.io)로 메일 주시면 친절하게 안내해드립니다.
-
-RN 0.60 이상 사용가능하며, Pod 필수입니다.
-
 
 ## Getting started
 
 ### Mostly automatic installation (RN >= 0.60)
 
 ```bash
-$ npm install @actbase/react-native-kakao-login --save
+$ npm install @altariz/rn-kakao-login --save
 $ cd ios && pod install && cd ..
 ```
 
-## 사용방법
+## How to use
 
 ```js
-import KakaoLogin from '@actbase/react-native-kakao-login';
+import KakaoLogin from '@altariz/rn-kakao-login';
 
 // 카카오 로그인 시 처리부문
 const loginOutput = await KakaoLogin.login();
@@ -82,7 +61,7 @@ const loginOutput = await KakaoLogin.login();
 
 
 ```js
-import KakaoLogin from '@actbase/react-native-kakao-login';
+import KakaoLogin from '@altariz/rn-kakao-login';
 
 // 카카오 로그아웃시 처리
 await KakaoLogin.logout();
